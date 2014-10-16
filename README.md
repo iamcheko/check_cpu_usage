@@ -10,7 +10,7 @@ Usage
 
 First of all, dont run this script as root. It will create a temporary file called /tmp/check_cpu_usage.gap.tmp, whith the actual measures. The script comes with a help option.
 
-'''
+```
 $ ./check_cpu_usage --help
 check_cpu_usage 
 
@@ -54,5 +54,5 @@ Usage: check_cpu_usage < arguments > arguments:
    Seconds before plugin times out (default: 15)
  -v, --verbose
    Show details for command-line debugging (can repeat up to 3 times)
-'''
+```
 
