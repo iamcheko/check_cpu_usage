@@ -1,0 +1,23 @@
+name: check_cpu_usage
+description: "file:///README.md"
+url: "https://github.com/iamcheko/check_cpu_usage.git"
+tags: cpu,usage
+vendor: Linux
+target: Operating System
+type: Plugin
+license: gplv2
+releases: 
+  - 
+    name: 1.0
+    description: "1.0 Release"
+    files: 
+      - 
+        name: check_cpu_usage
+        url: "file:///libexec/check_cpu_usage"
+        description: "First release"
+        checksum: 003ed4f04d16c7ea61994603275c981e
+      - 
+        name: check_cpu_usage.php
+        url: "file:///share/templates/check_cpu_usage.php"
+        description: "First release"
+        checksum: 8430a8dba91d43200ee278645dc6ca0b
