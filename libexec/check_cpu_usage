@@ -264,7 +264,7 @@ my $np = Nagios::Plugin->new(
 
 $np->add_arg(
     spec =>         'warning|w=s',
-    help =>         "--warning -c\n   a list of threshold for warning in the same order as names\n" .
+    help =>         "--warning -w\n   a list of threshold for warning in the same order as names\n" .
                     "   (default none,none,none,none,none,none,none,none,none,none,none,none,none,none)",
     default =>      "none,none,none,none,none,none,none,none,none,none,none,none,none,none",
     required =>     0

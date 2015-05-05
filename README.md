@@ -3,12 +3,12 @@ check_cpu_usage
 
 This script is intended to be an icinga, nagios or naemon plugin which measures the CPU usage in percent. By default you get the total usage of all cores but you can also measure all the cores.
 
-The php script is needed by pnp4nagios and is made for only one CPU. If you need more, extend the script to yur needs.
+The php script is needed by pnp4nagios and is made for only one CPU. If you need more, extend the script to your needs.
 
 Usage
 =====
 
-First of all, dont run this script as root. It will create a temporary file called /tmp/check_cpu_usage.gap.tmp, whith the actual measures. The script comes with a help option.
+First of all, don't run this script as root. It will create a temporary file called /tmp/check_cpu_usage.gap.tmp, with the actual measures. The script comes with a help option.
 
 ```
 $ ./check_cpu_usage --help
@@ -35,7 +35,7 @@ Usage: check_cpu_usage < arguments > arguments:
    Print version information
  --extra-opts=[section][@file]
    Read options from an ini file. See http://nagiosplugins.org/extra-opts for usage
- --warning -c
+ --warning -w
    a list of threshold for warning in the same order as names
    (default none,none,none,none,none,none,none,none,none,none,none,none,none,none)
  --critical -c
@@ -55,4 +55,22 @@ Usage: check_cpu_usage < arguments > arguments:
  -v, --verbose
    Show details for command-line debugging (can repeat up to 3 times)
 ```
+
+Examples
+========
+
+Get the total usage of all CPU's.
+```
+/path/to/my/libexec/check_cpu_usage
+```
+
+Check the total usage of all CPU's and trigger the trespass of the defined thresholds on user, system and idle.
+```
+/path/to/my/libexec/check_cpu_usage -w 12,none,20,20:,none,none,none,none,none,none,none,none,none,none -c 24,none,40,10:,none,none,none,none,none,none,none,none,none,none -n user,nice,system,idle,iowait,irq,softirq,steal,guest,guest_nice,custom1,custom2,custom3
+```
+
+Example performance data image
+![alt text] [cpu_usage]
+[cpu_usage]: https://github.com/iamcheko/check_cpu_usage/tree/master/images/check_cpu_usage.png "example image"
+
 
