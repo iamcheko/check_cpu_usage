@@ -70,6 +70,6 @@ Check the total usage of all CPU's and trigger the trespass of the defined thres
 ```
 
 Example performance data image
-![image] (https://github.com/iamcheko/check_cpu_usage/tree/master/images/check_cpu_usage.png)
+![check_cpu_usage](https://cloud.githubusercontent.com/assets/9155784/7510647/d086aac0-f49e-11e4-93a6-50cb303a6aec.png)
 
 
