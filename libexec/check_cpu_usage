@@ -248,7 +248,7 @@ sub compareData
 #-------------------------------------------------------------------------------
 my $objects = ();
 my $names = [];
-my $np = Nagios::Plugin->new(
+my $np = Monitoring::Plugin->new(
     shortname =>    "Linux CPU Usage",
     usage =>        "Usage: %s < arguments > " .
                     "arguments: \n" .
