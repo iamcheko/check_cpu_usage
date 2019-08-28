@@ -318,11 +318,20 @@ $objects->{ newdata } = readStatFile( $np, $np->opts->statfile, $names );
 
 if ( -e $np->opts->gapfile )
 {
-    # read data from stored file and store it to a hash
-    $objects->{ olddata } = readStatFile( $np, $np->opts->gapfile, $names );
+    # process the gapfile content if the file size is > 0
+    if ( ! -z $np->opts->gapfile )
+    {
+        # read data from stored file and store it to a hash
+        $objects->{ olddata } = readStatFile( $np, $np->opts->gapfile, $names );
 
-    # calculate difference and percent for the data
-    $objects->{ percent } = processData( $np, $objects, $names );
+        # calculate difference and percent for the data
+        $objects->{ percent } = processData( $np, $objects, $names );
+    }
+    # remove the file if the gapfile is empty
+    else
+    {
+        unlink $np->opts->gapfile
+    }
 }
 
 # write the new data to the gapfile
