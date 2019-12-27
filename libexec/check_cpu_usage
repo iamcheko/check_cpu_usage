@@ -38,8 +38,6 @@ use warnings;
 #-------------------------------------------------------------------------------
 #                     Used Modules
 #-------------------------------------------------------------------------------
-# use lib "/usr/local/nrpe/perl/lib";
-# use Nagios::Plugin;
 use Monitoring::Plugin;
 use Data::Dumper;
 
@@ -137,6 +135,12 @@ sub calculateData
 
     for ( my $i = 0; $i < scalar @$names; $i++ )
     {
+        # in case the gapfile is empty
+        if ( $sum == 0 )
+        {
+            $cpu->[ $i ] = 0;
+            next;
+        }
         $cpu->[ $i ] = $results[ $i ] * 100 / $sum;
     }
     return $cpu;
