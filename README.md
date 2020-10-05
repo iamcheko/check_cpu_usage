@@ -5,6 +5,12 @@ This script is intended to be an icinga, nagios or naemon plugin which measures 
 
 The php script is needed by pnp4nagios and is made for only one CPU. If you need more, extend the script to your needs.
 
+
+Dependencies
+============
+
+Perl monitoring plugin [Monitoring::Plugin](https://metacpan.org/pod/Monitoring::Plugin)
+
 Usage
 =====
 
